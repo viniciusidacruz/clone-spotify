@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 
 import loaderSource from "@/assets/loader.gif";
 
-import { IComponentParams, TVariants } from "./types";
+import { IComponentParams } from "./types";
 
 /**
  * @param {string}  title - Parâmetro para o título do botão.
@@ -10,12 +11,12 @@ import { IComponentParams, TVariants } from "./types";
  * @param {TVariants} [variants] - Parâmetro para informar qual o tipo do botão.
  */
 
-export function Button({
+export const Button = ({
   title,
   loading,
   variants,
   ...restProps
-}: IComponentParams) {
+}: IComponentParams) => {
   const renderCSS = () => {
     if (variants === "contrast") {
       return {
@@ -60,4 +61,4 @@ export function Button({
       {renderContentInButton()}
     </button>
   );
-}
+};
