@@ -12,7 +12,7 @@ const SectionIntroduction = () => {
   const { isVisible, handleOpenBrowser, isFullBrowser } = useBrowserStore();
 
   return (
-    <div className={`${isFullBrowser ? "p-0" : "p-5"} h-screen w-full`}>
+    <main className={`${isFullBrowser ? "p-0" : "p-5"} h-screen w-full`}>
       <section className="w-full h-full relative">
         {!isVisible ? (
           <div className="flex items-center justify-center h-full">
@@ -34,7 +34,7 @@ const SectionIntroduction = () => {
           <Browser isVisible={isVisible} />
         )}
       </section>
-    </div>
+    </main>
   );
 };
 

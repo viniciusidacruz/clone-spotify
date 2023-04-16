@@ -10,7 +10,7 @@ export const Dots = () => {
       <span
         aria-label="fechar navegador"
         onClick={handleCloseBrowser}
-        className="rounded-full bg-orange-500 h-3 w-3 cursor-pointer hover:bg-orange-300 ease-in duration-100"
+        className="rounded-full bg-red-500 h-3 w-3 cursor-pointer hover:bg-orange-300 ease-in duration-100"
       />
 
       <span

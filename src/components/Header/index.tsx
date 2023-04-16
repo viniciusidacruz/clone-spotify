@@ -1,3 +1,6 @@
+import { MoreVertical } from "lucide-react";
+
+import { FieldSearch } from "@/components";
 import { Dots, PrevNext } from "./components";
 
 export const Header = () => {
@@ -8,6 +11,10 @@ export const Header = () => {
 
         <PrevNext />
       </div>
+
+      <FieldSearch />
+
+      <MoreVertical className="text-zinc-500 cursor-pointer" />
     </header>
   );
 };
