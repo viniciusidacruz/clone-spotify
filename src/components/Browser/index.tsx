@@ -8,7 +8,7 @@ export const Browser = ({ isVisible }: IComponentParams) => {
   if (!isVisible) return null;
 
   return (
-    <div className="w-full h-full bg-[#242424] rounded-lg">
+    <div className="bg-[#242424] rounded-lg h-full">
       <Header />
     </div>
   );
