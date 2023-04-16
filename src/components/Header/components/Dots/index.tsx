@@ -3,7 +3,7 @@
 import { useBrowserStore } from "@/store";
 
 export const Dots = () => {
-  const { handleCloseBrowser } = useBrowserStore();
+  const { handleCloseBrowser, handleStateFullBrowser } = useBrowserStore();
 
   return (
     <div className="flex items-center gap-3">
@@ -19,6 +19,7 @@ export const Dots = () => {
       />
 
       <span
+        onClick={handleStateFullBrowser}
         arial-label="maximizar o navegador"
         className="rounded-full bg-green-500 h-3 w-3 cursor-pointer hover:bg-green-300 ease-in duration-100"
       />

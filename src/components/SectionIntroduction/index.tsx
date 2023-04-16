@@ -1,53 +1,40 @@
 "use client";
 
-import { Fragment } from "react";
-import { useTransition, animated } from "@react-spring/web";
+import Image from "next/image";
+
+import spotifySource from "@/assets/spotify.svg";
 
 import { useBrowserStore } from "@/store";
 
 import { Browser, Button } from "@/components";
 
 const SectionIntroduction = () => {
-  const { isVisible, handleOpenBrowser, handleCloseBrowser } =
-    useBrowserStore();
-
-  const transition = useTransition(isVisible, {
-    from: {
-      scale: 0,
-      opacity: 0,
-    },
-    enter: {
-      scale: 1,
-      opacity: 1,
-    },
-    leave: {
-      scale: 0,
-      opacity: 0,
-    },
-  });
+  const { isVisible, handleOpenBrowser, isFullBrowser } = useBrowserStore();
 
   return (
-    <Fragment>
-      <section className="w-full h-full">
+    <div className={`${isFullBrowser ? "p-0" : "p-5"} h-screen w-full`}>
+      <section className="w-full h-full relative">
         {!isVisible ? (
-          <Button
-            type="button"
-            variants="primary"
-            title="Iniciar Spotify"
-            onClick={handleOpenBrowser}
-            aria-label="Botão para iniciar o spotify"
-          />
+          <div className="flex items-center justify-center h-full">
+            <Button
+              icon={
+                <Image
+                  src={spotifySource}
+                  alt="Logo ofícial do Spotify em cor preta"
+                />
+              }
+              type="button"
+              variants="primary"
+              title="Iniciar Spotify"
+              onClick={handleOpenBrowser}
+              aria-label="Botão para iniciar o spotify"
+            />
+          </div>
         ) : (
-          <Fragment>
-            {transition((style, isOpen) => (
-              <animated.div style={style} className="h-full">
-                <Browser isVisible={isOpen} />
-              </animated.div>
-            ))}
-          </Fragment>
+          <Browser isVisible={isVisible} />
         )}
       </section>
-    </Fragment>
+    </div>
   );
 };
 

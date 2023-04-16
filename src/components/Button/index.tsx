@@ -7,14 +7,17 @@ import { IComponentParams } from "./types";
 
 /**
  * @param {string}  title - Parâmetro para o título do botão.
+ * @param {string} [className] - Parâmetro para implementar novos css.
  * @param {boolean} [loading] - Parâmetro para informar que está carregando algo.
  * @param {TVariants} [variants] - Parâmetro para informar qual o tipo do botão.
  */
 
 export const Button = ({
+  icon,
   title,
   loading,
   variants,
+  className,
   ...restProps
 }: IComponentParams) => {
   const renderCSS = () => {
@@ -44,8 +47,12 @@ export const Button = ({
       );
     } else {
       return (
-        <span className={`text-base ${renderCSS().color}  font-semibold`}>
-          {title}
+        <span
+          className={`text-base ${
+            renderCSS().color
+          }  font-semibold flex items-center gap-2`}
+        >
+          {icon} {title}
         </span>
       );
     }
@@ -55,7 +62,7 @@ export const Button = ({
     <button
       className={`${renderCSS().background} ${
         renderCSS()?.border
-      }  h-14 w-56 flex items-center justify-center rounded hover:scale-110 ease-in duration-300`}
+      } ${className}  h-14 w-56 flex items-center justify-center rounded hover:scale-110 ease-in duration-300`}
       {...restProps}
     >
       {renderContentInButton()}
