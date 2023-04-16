@@ -16,7 +16,7 @@ export const FieldSearch = () => {
   const handleSearch = (event: FormEvent) => {
     event.preventDefault();
 
-    push("https://youtube.com.br");
+    push(fieldValueSearch);
   };
 
   return (

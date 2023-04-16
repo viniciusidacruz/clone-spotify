@@ -14,7 +14,7 @@ export const Header = () => {
 
       <FieldSearch />
 
-      <MoreVertical className="text-zinc-500 cursor-pointer" />
+      <MoreVertical className="text-zinc-500 cursor-pointer hover:text-zinc-400 ease-in duration-100" />
     </header>
   );
 };
