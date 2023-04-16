@@ -31,6 +31,7 @@ export const FieldSearch = () => {
 
       <form onSubmit={handleSearch} className="w-full">
         <input
+          type="url"
           value={fieldValueSearch}
           onChange={(event) => setFieldValueSearch(event.target.value)}
           className="bg-transparent outline-none w-full text-gray-400 text-sm"

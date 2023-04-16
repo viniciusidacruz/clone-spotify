@@ -17,7 +17,7 @@ export const Browser = ({ isVisible }: IComponentParams) => {
           <Main />
         </div>
 
-        <footer className="bg-zinc-800 border-t border-zinc-700 p-6">footer</footer>
+        <footer className="bg-zinc-800 border-t border-zinc-700 p-6 rounded-b-lg">footer</footer>
       </div>
     </div>
   );
