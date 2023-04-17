@@ -1,7 +1,7 @@
 import "@/styles/global.css";
 
 export const metadata = {
-  title: "Navegador Spotify",
+  title: "Spotify - Web Player: Music for everyone | Clone",
 };
 
 export default function RootLayout({
@@ -11,6 +11,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <head>
+        <link rel="shortcut icon" href="./fav.png" type="image/png" />
+      </head>
       <body>{children}</body>
     </html>
   );
