@@ -17,17 +17,18 @@ const SectionIntroduction = () => {
         {!isVisible ? (
           <div className="flex items-center justify-center h-full">
             <Button
+              type="button"
+              variants="primary"
+              title="Iniciar Spotify"
+              className="animate-bounce"
+              onClick={handleOpenBrowser}
+              aria-label="Botão para iniciar o spotify"
               icon={
                 <Image
                   src={spotifySource}
                   alt="Logo ofícial do Spotify em cor preta"
                 />
               }
-              type="button"
-              variants="primary"
-              title="Iniciar Spotify"
-              onClick={handleOpenBrowser}
-              aria-label="Botão para iniciar o spotify"
             />
           </div>
         ) : (
