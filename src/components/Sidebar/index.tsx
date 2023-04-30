@@ -1,11 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowDownCircle, Plus } from "lucide-react";
 
+import { usePlaylistStore } from "@/store/playlist";
+
 import { Logo } from "@/components";
 
-import { MENUS, PLAYLISTS } from "./data";
+import { MENUS } from "./data";
 
 export const Sidebar = () => {
+  const { playlists, handleAddNewPlaylist } = usePlaylistStore();
+
   return (
     <aside className="w-64 bg-zinc-950 p-6 flex flex-col">
       <Logo />
@@ -23,6 +29,7 @@ export const Sidebar = () => {
       </nav>
       <button
         type="button"
+        onClick={() => handleAddNewPlaylist()}
         aria-label="Criar uma nova playlist"
         className="flex items-center gap-4 mt-10 text-zinc-400 hover:text-zinc-50 ease-in duration-100"
       >
@@ -32,10 +39,10 @@ export const Sidebar = () => {
       </button>
 
       <nav className="mt-6 pt-6 border-t border-zinc-800 flex flex-col gap-2 overflow-auto h-60">
-        {PLAYLISTS.map((play) => (
+        {playlists.map((play) => (
           <Link
             key={play.id}
-            href={play.path}
+            href={play.id}
             className="text-zinc-400 text-sm hover:text-zinc-100"
           >
             {play.title}
