@@ -1,4 +1,5 @@
 export * from "./Main";
+export * from "./Logo";
 export * from "./More";
 export * from "./Header";
 export * from "./Button";
